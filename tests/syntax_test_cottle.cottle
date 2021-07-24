@@ -1,0 +1,382 @@
+{_ SYNTAX TEST "Cottle.sublime-syntax" }
+
+{_ this is a working cottle script for EDDI }
+{_ <- comment.block.cottle punctuation.definition.comment.begin.cottle}
+ {_ <- comment.block.cottle punctuation.definition.comment.begin.cottle}
+{_^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.cottle}
+
+{_ this
+ is
+ a
+ comment
+}
+{_ <- comment.block.cottle punctuation.definition.comment.end.cottle}
+
+{set variable to 1}                                         {_ this is a comment}
+{_ <- meta.block.cottle punctuation.section.block.begin.cottle}
+{_^^^^^^^^^^^^^^^^^ meta.block.cottle}
+{_^^ keyword.other.cottle}
+{_   ^^^^^^^^ variable.other.cottle }
+{_            ^^ keyword.other.cottle}
+{_               ^ meta.number.integer.decimal.cottle constant.numeric.value.cottle}
+{_                ^ punctuation.section.block.end.cottle}
+
+unquoted string with 1 {variable} inside.                   {_ this is a comment}
+{_ ^^^^^^^^^^^^^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                     ^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle}
+{_                                ^^^^^^^ meta.string.cottle - meta.interpolation}
+{_ ^^^^^^^^^^^^^^^^^^^^ string.unquoted.cottle}
+{_                     ^^^^^^^^^^ - string}
+{_                     ^ punctuation.section.interpolation.begin.cottle}
+{_                      ^^^^^^^^ variable.other.cottle}
+{_                              ^ punctuation.section.interpolation.end.cottle}
+{_                                ^^^^^^^ string.unquoted.cottle}
+{_                                       ^^^^^^^^^^^^^^^^^^^ - string - comment}
+{_                                                          ^^^^^^^^^^^^^^^^^^^^^ comment.block.cottle}
+
+'single-quoted string with 1 {variable} inside.'            {_ this is a comment}
+{_ <- meta.string.cottle string.quoted.single.cottle punctuation.definition.string.begin.cottle}
+{_ ^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                           ^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle}
+{_                                      ^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.cottle}
+{_                           ^^^^^^^^^^ - string}
+{_                           ^ punctuation.section.interpolation.begin.cottle}
+{_                            ^^^^^^^^ variable.other.cottle}
+{_                                    ^ punctuation.section.interpolation.end.cottle}
+{_                                      ^^^^^^^^ string.quoted.single.cottle}
+{_                                             ^ punctuation.definition.string.end.cottle}
+{_                                              ^^^^^^^^^^^^ - string - comment }
+{_                                                          ^^^^^^^^^^^^^^^^^^^^^ comment.block.cottle}
+
+"double-quoted string with 1 {variable} inside."            {_ this is a comment}
+{_ <- meta.string.cottle string.quoted.double.cottle punctuation.definition.string.begin.cottle}
+{_ ^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                           ^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle}
+{_                                      ^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.cottle}
+{_                           ^^^^^^^^^^ - string}
+{_                           ^ punctuation.section.interpolation.begin.cottle}
+{_                            ^^^^^^^^ variable.other.cottle}
+{_                                    ^ punctuation.section.interpolation.end.cottle}
+{_                                      ^^^^^^^^ string.quoted.double.cottle}
+{_                                             ^ punctuation.definition.string.end.cottle}
+{_                                              ^^^^^^^^^^^^ - string - comment }
+{_                                                          ^^^^^^^^^^^^^^^^^^^^^ comment.block.cottle}
+
+{if false:
+{_ <- meta.block.cottle punctuation.section.block.begin.cottle}
+ {_ <- meta.block.cottle keyword.control.conditional.cottle}
+{_ ^^^^^^^^ meta.block.cottle}
+{_  ^^^^^ constant.language.boolean.false.cottle}
+{_       ^ punctuation.separator.statement.cottle}
+
+    unquoted string with 1 {variable} inside.               {_ this is a comment}
+{_ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.cottle}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                         ^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle}
+{_                                    ^^^^^^^ meta.string.cottle - meta.interpolation}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^ string.unquoted.cottle}
+{_                         ^^^^^^^^^^ - string}
+{_                         ^ punctuation.section.interpolation.begin.cottle}
+{_                          ^^^^^^^^ variable.other.cottle}
+{_                                  ^ punctuation.section.interpolation.end.cottle}
+{_                                    ^^^^^^^ string.unquoted.cottle}
+{_                                           ^^^^^^^^^^^^^^^ - string - comment}
+{_                                                          ^^^^^^^^^^^^^^^^^^^^^ comment.block.cottle}
+
+    'single-quoted string with 1 {variable} inside.'        {_ this is a comment}
+{_ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.cottle}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                               ^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle}
+{_                                          ^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.cottle}
+{_  ^ punctuation.definition.string.begin.cottle}
+{_                               ^^^^^^^^^^ - string}
+{_                               ^ punctuation.section.interpolation.begin.cottle}
+{_                                ^^^^^^^^ variable.other.cottle}
+{_                                        ^ punctuation.section.interpolation.end.cottle}
+{_                                          ^^^^^^^^ string.quoted.single.cottle}
+{_                                                 ^ punctuation.definition.string.end.cottle}
+{_                                                  ^^^^^^^^ - string - comment }
+{_                                                          ^^^^^^^^^^^^^^^^^^^^^ comment.block.cottle}
+
+    "double-quoted string with 1 {variable} inside."        {_ this is a comment}
+{_ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.cottle}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                               ^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle}
+{_                                          ^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.cottle}
+{_  ^ punctuation.definition.string.begin.cottle}
+{_                               ^^^^^^^^^^ - string}
+{_                               ^ punctuation.section.interpolation.begin.cottle}
+{_                                ^^^^^^^^ variable.other.cottle}
+{_                                        ^ punctuation.section.interpolation.end.cottle}
+{_                                          ^^^^^^^^ string.quoted.double.cottle}
+{_                                                 ^ punctuation.definition.string.end.cottle}
+{_                                                  ^^^^^^^^ - string - comment }
+{_                                                          ^^^^^^^^^^^^^^^^^^^^^ comment.block.cottle}
+
+|elif:
+{_ <- meta.block.cottle punctuation.separator.statement.cottle}
+{_^^^^^ meta.block.cottle}
+{_^^^ meta.block.cottle keyword.control.conditional.cottle}
+{_   ^ punctuation.separator.statement.cottle}
+
+    unquoted string with 1 {variable} inside.               {_ this is a comment}
+{_ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.cottle}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                         ^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle}
+{_                                    ^^^^^^^ meta.string.cottle - meta.interpolation}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^ string.unquoted.cottle}
+{_                         ^^^^^^^^^^ - string}
+{_                         ^ punctuation.section.interpolation.begin.cottle}
+{_                          ^^^^^^^^ variable.other.cottle}
+{_                                  ^ punctuation.section.interpolation.end.cottle}
+{_                                    ^^^^^^^ string.unquoted.cottle}
+{_                                           ^^^^^^^^^^^^^^^ - string - comment}
+{_                                                          ^^^^^^^^^^^^^^^^^^^^^ comment.block.cottle}
+
+    'single-quoted string with 1 {variable} inside.'        {_ this is a comment}
+{_ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.cottle}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                               ^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle}
+{_                                          ^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.cottle}
+{_  ^ punctuation.definition.string.begin.cottle}
+{_                               ^^^^^^^^^^ - string}
+{_                               ^ punctuation.section.interpolation.begin.cottle}
+{_                                ^^^^^^^^ variable.other.cottle}
+{_                                        ^ punctuation.section.interpolation.end.cottle}
+{_                                          ^^^^^^^^ string.quoted.single.cottle}
+{_                                                 ^ punctuation.definition.string.end.cottle}
+{_                                                  ^^^^^^^^ - string - comment }
+{_                                                          ^^^^^^^^^^^^^^^^^^^^^ comment.block.cottle}
+
+    "double-quoted string with 1 {variable} inside."        {_ this is a comment}
+{_ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.cottle}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                               ^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle}
+{_                                          ^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.cottle}
+{_  ^ punctuation.definition.string.begin.cottle}
+{_                               ^^^^^^^^^^ - string}
+{_                               ^ punctuation.section.interpolation.begin.cottle}
+{_                                ^^^^^^^^ variable.other.cottle}
+{_                                        ^ punctuation.section.interpolation.end.cottle}
+{_                                          ^^^^^^^^ string.quoted.double.cottle}
+{_                                                 ^ punctuation.definition.string.end.cottle}
+{_                                                  ^^^^^^^^ - string - comment }
+{_                                                          ^^^^^^^^^^^^^^^^^^^^^ comment.block.cottle}
+
+|else:
+{_ <- meta.block.cottle punctuation.separator.statement.cottle}
+{_^^^^^ meta.block.cottle}
+{_^^^ meta.block.cottle keyword.control.conditional.cottle}
+{_   ^ punctuation.separator.statement.cottle}
+
+    unquoted string with a {Emphasize("this is a string_parameter")} inside.
+{_ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.cottle }
+{_  ^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                         ^^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle - meta.string meta.string}
+{_                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle meta.string.cottle}
+{_                                                                ^^ meta.string.cottle meta.interpolation.cottle - meta.string meta.string}
+{_                                                                  ^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                          ^^^^^^^^^ meta.function-call.identifier.cottle}
+{_                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.function-call.arguments.cottle meta.group.cottle}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^ string.unquoted.cottle}
+{_                         ^^^^^^^^^^^ - string}
+{_                         ^ punctuation.section.interpolation.begin.cottle}
+{_                          ^^^^^^^^^ variable.function.cottle}
+{_                                   ^ punctuation.section.group.begin}
+{_                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.cottle}
+{_                                    ^ punctuation.definition.string.begin.cottle}
+{_                                                               ^ punctuation.definition.string.end.cottle}
+{_                                                                ^ punctuation.section.group.end.cottle}
+{_                                                                 ^ punctuation.section.interpolation.end.cottle}
+
+    "double-quoted string with a {Emphasize("this is a string_parameter")} inside."
+{_ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.cottle }
+{_  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                               ^^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle - meta.string meta.string}
+{_                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle meta.string.cottle}
+{_                                                                      ^^ meta.string.cottle meta.interpolation.cottle - meta.string meta.string}
+{_                                                                        ^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                                ^^^^^^^^^ meta.function-call.identifier.cottle}
+{_                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.function-call.arguments.cottle meta.group.cottle}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.cottle}
+{_                               ^^^^^^^^^^^ - string}
+{_                               ^ punctuation.section.interpolation.begin.cottle}
+{_                                ^^^^^^^^^ variable.function.cottle}
+{_                                         ^ punctuation.section.group.begin}
+{_                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.cottle}
+{_                                          ^ punctuation.definition.string.begin.cottle}
+{_                                                                     ^ punctuation.definition.string.end.cottle}
+{_                                                                      ^ punctuation.section.group.end.cottle}
+{_                                                                       ^ punctuation.section.interpolation.end.cottle}
+{_                                                                        ^^^^^^^^^ string.quoted.double.cottle}
+
+    'single-quoted string with a {Emphasize("this is a {cat("string", "_", "parameter")} ")} inside'.
+{_ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.cottle }
+{_  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                               ^^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle - meta.string meta.string}
+{_                                          ^^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle meta.string.cottle - meta.interpolation meta.interpolation}
+{_                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle meta.string.cottle meta.interpolation.cottle }
+{_                                                                                      ^^ meta.string.cottle meta.interpolation.cottle meta.string.cottle - meta.interpolation meta.interpolation}
+{_                                                                                        ^^ meta.string.cottle meta.interpolation.cottle - meta.string meta.string}
+{_                                                                                          ^^^^^^^^ meta.string.cottle - meta.interpolation}
+{_                                ^^^^^^^^^ meta.function-call.identifier.cottle - meta.function-call meta.function-call}
+{_                                         ^^^^^^^^^^^^^ meta.function-call.arguments.cottle - meta.function-call meta.function-call}
+{_                                                      ^^^ meta.function-call.arguments.cottle meta.function-call.identifier.cottle}
+{_                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.function-call.arguments.cottle meta.function-call.arguments.cottle}
+{_                                                                                     ^^^^ meta.function-call.arguments.cottle - meta.function-call meta.function-call}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.cottle}
+{_                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ - string.quoted.single}
+{_                               ^ punctuation.section.interpolation.begin.cottle}
+{_                                ^^^^^^^^^ variable.function.cottle}
+{_                                         ^ punctuation.section.group.begin}
+{_                                          ^^^^^^^^^^^ string.quoted.double.cottle}
+{_                                          ^ punctuation.definition.string.begin.cottle}
+{_                                                     ^^^^^ - string.quoted.double}
+{_                                                     ^ punctuation.section.interpolation.begin.cottle}
+{_                                                      ^^^ support.function.cottle}
+{_                                                         ^ punctuation.section.group.begin}
+{_                                                          ^^^^^^^^ string.quoted.double.cottle}
+{_                                                          ^ punctuation.definition.string.begin.cottle}
+{_                                                                 ^ punctuation.definition.string.end.cottle}
+{_                                                                  ^ punctuation.separator.sequence.cottle}
+{_                                                                    ^^^ string.quoted.double.cottle}
+{_                                                                    ^ punctuation.definition.string.begin.cottle}
+{_                                                                      ^ punctuation.definition.string.end.cottle}
+{_                                                                       ^ punctuation.separator.sequence.cottle}
+{_                                                                         ^^^^^^^^^^^ string.quoted.double.cottle}
+{_                                                                         ^ punctuation.definition.string.begin.cottle}
+{_                                                                                   ^ punctuation.definition.string.end.cottle}
+{_                                                                                    ^ punctuation.section.group.end.cottle}
+{_                                                                                     ^ punctuation.section.interpolation.end.cottle}
+{_                                                                                       ^ punctuation.definition.string.end.cottle}
+{_                                                                                        ^ punctuation.section.group.end.cottle}
+{_                                                                                         ^ punctuation.section.interpolation.end.cottle}
+{_                                                                                          ^^^^^^^^ string.quoted.single.cottle}
+{_                                                                                                  ^ string.unquoted.cottle}
+}
+{_ <- meta.block.cottle punctuation.section.block.end.cottle}
+
+'It\'s a "single-quoted string" with 1 {variable} inside.'  {_ this is a comment}
+{_^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle}
+{_                                     ^^^^^^^^^^ meta.interpolation.cottle}
+{_^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.single.cottle}
+{_                                     ^^^^^^^^^^ - string}
+{_                                               ^^^^^^^^^ string.quoted.single.cottle}
+{_                                                        ^^ - string - comment}
+{_                                                          ^^^^^^^^^^^^^^^^^^^^^ comment.block.cottle}
+{_ ^^ constant.character.escape}
+
+"It's a \"double-quoted string\" with 1 {variable} inside." {_ this is a comment}
+{_^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle}
+{_                                      ^^^^^^^^^^ meta.interpolation.cottle}
+{_^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.cottle}
+{_                                      ^^^^^^^^^^ - string}
+{_                                                ^^^^^^^^^ string.quoted.double.cottle}
+{_                                                         ^ - string - comment}
+{_                                                          ^^^^^^^^^^^^^^^^^^^^^ comment.block.cottle}
+{_      ^^ constant.character.escape}
+{_                            ^^ constant.character.escape}
+It\'s a \"unquoted string\" with 1 {variable} inside.       {_ this is a comment}
+{_^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle}
+{_                                 ^^^^^^^^^^ meta.interpolation.cottle}
+{_^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.unquoted.cottle}
+{_                                 ^^^^^^^^^^ - string}
+{_                                           ^^^^^^^^ string.unquoted.cottle}
+{_                                                   ^^^^^^^ - string - comment}
+{_                                                          ^^^^^^^^^^^^^^^^^^^^^ comment.block.cottle}
+{_^^ constant.character.escape}
+{_      ^^ constant.character.escape}
+{_                       ^^ constant.character.escape}
+
+    {OneOf("left supercruise", "{OneOf(\"entered\", \"returned to\", \"dropped to\")} normal space")}
+{_  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.cottle}
+{_   ^^^^^ meta.function-call.identifier.cottle - meta.function-call meta.function-call}
+{_        ^^^^^^^^^^^^^^^^^^^^^^^ meta.function-call.arguments.cottle meta.group.cottle - meta.function-call meta.function-call}
+{_                               ^^^^^ meta.function-call.arguments.cottle meta.function-call.identifier.cottle}
+{_                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.function-call.arguments.cottle meta.function-call.arguments.cottle meta.group.cottle}
+{_                                                                                  ^^^^^^^^^^^^^^^^ meta.function-call.arguments.cottle meta.group.cottle - meta.function-call meta.function-call}
+{_  ^ punctuation.section.block.begin.cottle}
+{_   ^^^^^ variable.function.cottle}
+{_        ^ punctuation.section.group.begin}
+{_         ^^^^^^^^^^^^^^^^^^ string.quoted.double.cottle}
+{_                           ^ punctuation.separator.sequence.cottle}
+{_                             ^ meta.string.cottle string.quoted.double.cottle punctuation.definition.string.begin.cottle}
+{_                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.string.cottle meta.interpolation.cottle}
+{_                              ^^^^^^^ - string}
+{_                                     ^^^^^^^^^^^ string.unquoted.cottle}
+{_                                     ^^ constant.character.escape}
+{_                                              ^^ constant.character.escape}
+{_                                                ^ punctuation.separator.sequence.cottle}
+{_                                                  ^^^^^^^^^^^^^^^ string.unquoted.cottle}
+{_                                                  ^^ constant.character.escape}
+{_                                                               ^^ constant.character.escape}
+{_                                                                 ^ punctuation.separator.sequence.cottle}
+{_                                                                   ^^^^^^^^^^^^^^ string.unquoted.cottle}
+{_                                                                   ^^ constant.character.escape}
+{_                                                                               ^^ constant.character.escape}
+{_                                                                                 ^ punctuation.section.group.end.cottle}
+{_                                                                                  ^ punctuation.section.interpolation.end.cottle}
+{_                                                                                   ^^^^^^^^^^^^^^ meta.string.cottle string.quoted.double.cottle - meta.interpolation}
+{_                                                                                                ^ punctuation.definition.string.end.cottle}
+{_                                                                                                 ^ punctuation.section.group.end.cottle}
+{_                                                                                                  ^ punctuation.section.block.end.cottle}
+
+{event.item}
+{_ <- meta.block.cottle punctuation.section.block.begin.cottle}
+{_ ^^^^^^^^^ meta.block.cottle}
+{_ ^^^ variable.other.cottle}
+{_    ^ punctuation.accessor.property.cottle}
+{_     ^^^^ variable.language.property.cottle}
+{_         ^ punctuation.section.block.end.cottle}
+{if event.repairedfully:
+{_ <- meta.block.cottle punctuation.section.block.begin.cottle}
+{_  ^^^^^^^^^^^^^^^^^^^^^ meta.block.cottle}
+{_  ^^^^^ variable.other.cottle}
+{_       ^ punctuation.accessor.property.cottle}
+{_        ^^^^^^^^^^^^^ variable.language.property.cottle}
+{_                     ^ punctuation.separator.statement.cottle}
+    fully repaired
+{_  ^^^^^^^^^^^^^^ meta.block.cottle meta.string.cottle string.unquoted.cottle}
+|else:
+    partially repaired
+    {Occasionally(2,
+{_  ^ meta.block.cottle meta.block.cottle punctuation.section.block.begin.cottle}
+{_   ^^^^^^^^^^^^ meta.block.cottle meta.block.cottle meta.function-call.identifier.cottle variable.function.cottle}
+{_               ^^^^ meta.block.cottle meta.block.cottle meta.function-call.arguments.cottle meta.group.cottle}
+{_               ^ punctuation.section.group.begin}
+{_                ^ meta.number.integer.decimal.cottle constant.numeric.value.cottle}
+{_                 ^ punctuation.separator.sequence.cottle}
+        cat(
+{_      ^^^ meta.block.cottle meta.block.cottle meta.function-call.arguments.cottle meta.group.cottle meta.function-call.identifier.cottle support.function.cottle}
+{_         ^ meta.block.cottle meta.block.cottle meta.function-call.arguments.cottle meta.group.cottle meta.function-call.arguments.cottle meta.group.cottle punctuation.section.group.begin}
+            OneOf("to ", "at "),
+{_          ^^^^^ meta.block.cottle meta.block.cottle meta.function-call.arguments.cottle meta.group.cottle meta.function-call.arguments.cottle meta.group.cottle meta.function-call.identifier.cottle variable.function.cottle}
+{_               ^^^^^^^^^^^^^^ meta.block.cottle meta.block.cottle meta.function-call.arguments.cottle meta.group.cottle meta.function-call.arguments.cottle meta.group.cottle meta.function-call.arguments.cottle meta.group.cottle}
+{_                             ^ meta.block.cottle meta.block.cottle meta.function-call.arguments.cottle meta.group.cottle meta.function-call.arguments.cottle meta.group.cottle punctuation.separator.sequence.cottle}
+            Humanise(event.health * 100),
+{_          ^^^^^^^^ meta.block.cottle meta.block.cottle meta.function-call.arguments.cottle meta.group.cottle meta.function-call.arguments.cottle meta.group.cottle meta.function-call.identifier.cottle variable.function.cottle}
+{_                  ^^^^^^^^^^^^^^^^^^^^ meta.block.cottle meta.block.cottle meta.function-call.arguments.cottle meta.group.cottle meta.function-call.arguments.cottle meta.group.cottle meta.function-call.arguments.cottle meta.group.cottle}
+{_                                      ^ meta.block.cottle meta.block.cottle meta.function-call.arguments.cottle meta.group.cottle meta.function-call.arguments.cottle meta.group.cottle punctuation.separator.sequence.cottle}
+{_                  ^ punctuation.section.group.begin}
+{_                   ^^^^^ variable.other.cottle}
+{_                        ^ punctuation.accessor.property.cottle}
+{_                         ^^^^^^ variable.language.property.cottle}
+{_                                ^ keyword.operator.arithmetic.cottle}
+{_                                  ^^^ constant.numeric.value.cottle}
+{_                                     ^  punctuation.section.group.end.cottle}
+            " percent functionality"
+{_          ^^^^^^^^^^^^^^^^^^^^^^^^ meta.block.cottle meta.block.cottle meta.function-call.arguments.cottle meta.group.cottle meta.function-call.arguments.cottle meta.group.cottle meta.string.cottle string.quoted.double.cottle}
+        )
+{_      ^ meta.block.cottle meta.block.cottle meta.function-call.arguments.cottle meta.group.cottle meta.function-call.arguments.cottle meta.group.cottle punctuation.section.group.end.cottle}
+    )}
+{_  ^ meta.block.cottle meta.block.cottle meta.function-call.arguments.cottle meta.group.cottle punctuation.section.group.end.cottle}
+{_   ^ meta.block.cottle meta.block.cottle punctuation.section.block.end.cottle}
+{_    ^ meta.block.cottle}
+}
+{_ <- meta.block.cottle punctuation.section.block.end.cottle}

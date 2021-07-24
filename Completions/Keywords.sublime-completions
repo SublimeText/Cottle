@@ -1,0 +1,101 @@
+{
+	"scope": "source.cottle - comment - string",
+	"completions": [
+
+		{
+			"trigger": "if",
+			"kind": "keyword",
+			"details": "control flow"
+		},
+		{
+			"trigger": "elif",
+			"kind": "keyword",
+			"details": "control flow"
+		},
+		{
+			"trigger": "else",
+			"kind": "keyword",
+			"details": "control flow"
+		},
+		{
+			"trigger": "for",
+			"kind": "keyword",
+			"details": "control flow"
+		},
+		{
+			"trigger": "while",
+			"kind": "keyword",
+			"details": "control flow"
+		},
+		{
+			"trigger": "declare",
+			"kind": "keyword",
+			"details": "declaration"
+		},
+		{
+			"trigger": "as",
+			"kind": "keyword",
+			"details": "declaration"
+		},
+		{
+			"trigger": "dump",
+			"kind": "keyword",
+			"details": ""
+		},
+		{
+			"trigger": "echo",
+			"kind": "keyword",
+			"details": ""
+		},
+		{
+			"trigger": "empty",
+			"kind": "keyword",
+			"details": ""
+		},
+		{
+			"trigger": "set",
+			"kind": "keyword",
+			"details": ""
+		},
+		{
+			"trigger": "to",
+			"kind": "keyword",
+			"details": ""
+		},
+		{
+			"trigger": "return",
+			"kind": "keyword",
+			"details": "control flow"
+		},
+		{
+			"trigger": "void",
+			"kind": "keyword",
+			"details": "declaration"
+		},
+		{
+			"trigger": "and",
+			"kind": "keyword",
+			"details": "logical operator"
+		},
+		{
+			"trigger": "or",
+			"kind": "keyword",
+			"details": "logical operator"
+		},
+		{
+			"trigger": "not",
+			"kind": "keyword",
+			"details": "logical operator"
+		},
+		{
+			"trigger": "is",
+			"kind": "keyword",
+			"details": "logical operator"
+		},
+		{
+			"trigger": "in",
+			"kind": "keyword",
+			"details": "logical operator"
+		}
+	]
+}

@@ -1,0 +1,269 @@
+%YAML 1.2
+---
+name: Cottle
+scope: source.cottle
+
+file_extensions:
+  - cottle
+
+variables:
+  builtin_functions: |-
+    \b(?x:
+      abs | add | call | cast | cat | ceil | char | cmp | cos | cross | default
+    | defined | div | eq | except | filter | find | flip | floor | format | ge
+    | gt | has | join | lcase | le | len | lt | map | match | max | min | mod
+    | mul | ne | ord | pow | rand | range | round | sin | slice | sort | split
+    | sub | token | type | ucase | union | when | xor | zip
+    )\b
+
+  custom_functions: |-
+    \b(?x:
+      BlueprintDetails | BodyDetails | CombatRatingDetails | Distance | EconomyDetails
+    | Emphasize | EmpireRatingDetails | ExplorationRatingDetails | F
+    | FederationRatingDetails | GalnetNewsArticle | GalnetNewsArticles
+    | GalnetNewsDelete | GalnetNewsMarkRead | GalnetNewsMarkUnread | GovernmentDetails
+    | Humanise | ICAO | List | Log | MaterialDetails | Occasionally | OneOf | P
+    | Pause | Play | SecondsSince | SecurityLevelDetails | SetState | ShipCallsign
+    | ShipDetails | ShipName | Spacialise | SpeechPitch | SpeechRate | SpeechVolume
+    | StartsWithVowel | StateDetails | StationDetails | SuperpowerDetails
+    | SystemDetails | TradeRatingDetails
+    )\b
+
+contexts:
+  main:
+    - include: body-text
+
+  body-text:
+    - include: comments
+    - include: blocks
+    - include: quoted-strings
+    - include: unquoted-strings
+
+  code:
+    - include: blocks
+    - include: predicate-statements
+    - include: expressions
+
+  expressions:
+    - include: comments
+    - include: groups
+    - include: mappings
+    - include: keywords
+    - include: literals
+    - include: numbers
+    - include: operators
+    - include: properties
+    - include: function-calls
+    - include: quoted-strings
+    - include: variables
+
+###[ COMMENTS ]###############################################################
+
+  comments:
+    - match: \{\s*_
+      scope: punctuation.definition.comment.begin.cottle
+      push: comment-body
+
+  comment-body:
+    - meta_scope: comment.block.cottle
+    - match: \}
+      scope: punctuation.definition.comment.end.cottle
+      pop: true
+
+###[ STATEMENTS ]#############################################################
+
+  blocks:
+    - match: \{
+      scope: punctuation.section.block.begin.cottle
+      push: block-body
+    - match: \}
+      scope: invalid.illegal.stray.cottle
+
+  block-body:
+    - meta_scope: meta.block.cottle
+    - match: \}
+      scope: punctuation.section.block.end.cottle
+      pop: true
+    - include: code
+
+  block-end-ahead:
+    - match: (?=\})
+      pop: true
+
+  predicate-statements:
+    - match: ':'
+      scope: punctuation.separator.statement.cottle
+      push: predicate-statements-body
+
+  predicate-statements-body:
+    - match: \|
+      scope: punctuation.separator.statement.cottle
+      pop: true
+    - include: block-end-ahead
+    - include: body-text
+
+###[ EXPRESSIONS ]############################################################
+
+  function-calls:
+    - match: '{{builtin_functions}}(?=\()'
+      scope: meta.function-call.identifier.cottle support.function.cottle
+      push: function-call-arguments
+    - match: '{{custom_functions}}(?=\()'
+      scope: meta.function-call.identifier.cottle variable.function.cottle
+      push: function-call-arguments
+
+  function-call-arguments:
+    - meta_include_prototype: false
+    - match: \(
+      scope: punctuation.section.group.begin
+      set: function-call-arguments-body
+
+  function-call-arguments-body:
+    - meta_scope: meta.function-call.arguments.cottle meta.group.cottle
+    - match: \)
+      scope: punctuation.section.group.end.cottle
+      pop: true
+    - include: expressions
+    - include: unquoted-arguments
+
+  groups:
+    - match: \(
+      scope: punctuation.section.group.begin.cottle
+      push: group-body
+
+  group-body:
+    - meta_scope: meta.group.cottle
+    - match: \)
+      scope: punctuation.section.group.end.cottle
+      pop: true
+    - include: expressions
+
+  mappings:
+    - match: \[
+      scope: punctuation.section.mapping.begin.cottle
+      push: mapping-body
+
+  mapping-body:
+    - meta_scope: meta.mapping.cottle
+    - match: \]
+      scope: punctuation.section.mapping.end.cottle
+      pop: true
+    - include: expressions
+
+  keywords:
+    - match: \b(if|elif|else)\b
+      scope: keyword.control.conditional.cottle
+    - match: \b(for|while)\b
+      scope: keyword.control.loop.cottle
+    - match: \b(declare|as)\b
+      scope: keyword.declaration.cottle
+    - match: \b(dump|echo|empty|set|to)\b
+      scope: keyword.other.cottle
+    - match: \b(return)\b
+      scope: keyword.control.flow.cottle
+
+  literals:
+    - match: \btrue\b
+      scope: constant.language.boolean.true.cottle
+    - match: \bfalse\b
+      scope: constant.language.boolean.false.cottle
+    - match: \bvoid\b
+      scope: keyword.declaration.function.cottle
+
+  numbers:
+    - match: \d*(\.)\d+
+      scope: meta.number.float.decimal.cottle constant.numeric.value.cottle
+    - match: \d+
+      scope: meta.number.integer.decimal.cottle constant.numeric.value.cottle
+
+  operators:
+    - match: <=|>=|!=|<|=|>
+      scope: keyword.operator.comparison.cottle
+    - match: \&\&|\|\||!
+      scope: keyword.operator.logical.cottle
+    - match: \b(and|or|not|is|in)\b
+      scope: keyword.operator.logical.cottle
+    - match: '[-+*/%]'
+      scope: keyword.operator.arithmetic.cottle
+    - match: ','
+      scope: punctuation.separator.sequence.cottle
+
+  properties:
+    - match: (\.)\s*(\w+)\b
+      captures:
+        1: punctuation.accessor.property.cottle
+        2: variable.language.property.cottle
+
+  variables:
+    - match: \b\w+\b
+      scope: variable.other.cottle
+
+  quoted-strings:
+    - include: double-quoted-strings
+    - include: single-quoted-strings
+
+  double-quoted-strings:
+    - match: \"
+      scope: punctuation.definition.string.begin.cottle
+      push: double-quoted-string-body
+
+  double-quoted-string-body:
+    - meta_scope: meta.string.cottle string.quoted.double.cottle
+    - match: \"|$
+      scope: punctuation.definition.string.end.cottle
+      pop: true
+    - include: string-escapes
+    - include: string-interpolations
+
+  single-quoted-strings:
+    - match: \'
+      scope: punctuation.definition.string.begin.cottle
+      push: single-quoted-string-body
+
+  single-quoted-string-body:
+    - meta_scope: meta.string.cottle string.quoted.single.cottle
+    - match: \'|$
+      scope: punctuation.definition.string.end.cottle
+      pop: true
+    - include: string-escapes
+    - include: string-interpolations
+
+  unquoted-arguments:
+    - match: (?=\S)
+      push: unquoted-arguments-body
+
+  unquoted-arguments-body:
+    - meta_content_scope: meta.string.cottle string.unquoted.cottle
+    - match: \s*(?:$|(?=\{\s*_|[,:|)}]))
+      pop: true
+    - include: string-escapes
+    - include: string-interpolations
+
+  unquoted-strings:
+    - match: (?=\S)
+      push: unquoted-string-body
+
+  unquoted-string-body:
+    - meta_content_scope: meta.string.cottle string.unquoted.cottle
+    # unquoted strings are terminated by `eol`, comments or statement delimiters
+    - match: \s*(?:$|(?=\{\s*_|[:|}]))
+      pop: true
+    - include: string-escapes
+    - include: string-interpolations
+
+  string-escapes:
+    - match: \\.
+      scope: constant.character.escape
+
+  string-interpolations:
+    - match: \{
+      scope: punctuation.section.interpolation.begin.cottle
+      push: string-interpolation-body
+
+  string-interpolation-body:
+    - clear_scopes: 1
+    - meta_scope: meta.interpolation.cottle
+    - match: \}
+      scope: punctuation.section.interpolation.end.cottle
+      pop: true
+    - include: code

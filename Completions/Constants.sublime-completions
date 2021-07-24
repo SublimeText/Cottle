@@ -1,0 +1,15 @@
+{
+	"scope": "source.cottle - comment - string",
+	"completions": [
+		{
+			"trigger": "true",
+			"kind": ["variable", "c", "Constant"],
+			"details": "boolean"
+		},
+		{
+			"trigger": "false",
+			"kind": ["variable", "c", "Constant"],
+			"details": "boolean"
+		}
+	]
+}

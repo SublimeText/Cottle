@@ -1,0 +1,215 @@
+{
+	"scope": "source.cottle - comment - string",
+	"completions": [
+		{
+			"trigger": "BlueprintDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "BodyDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "CombatRatingDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "Distance",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "EconomyDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "Emphasize",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "EmpireRatingDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "ExplorationRatingDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "F",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "FederationRatingDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "GalnetNewsArticle",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "GalnetNewsArticles",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "GalnetNewsDelete",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "GalnetNewsMarkRead",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "GalnetNewsMarkUnread",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "GovernmentDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "Humanise",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "ICAO",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "List",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "Log",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "MaterialDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "Occasionally",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "OneOf",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "P",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "Pause",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "Play",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "SecondsSince",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "SecurityLevelDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "SetState",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "ShipCallsign",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "ShipDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "ShipName",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "Spacialise",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "SpeechPitch",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "SpeechRate",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "SpeechVolume",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "StartsWithVowel",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "StateDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "StationDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "SuperpowerDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "SystemDetails",
+			"kind": "function",
+			"details": "custom functions"
+		},
+		{
+			"trigger": "TradeRatingDetails",
+			"kind": "function",
+			"details": "custom functions"
+		}
+	]
+}

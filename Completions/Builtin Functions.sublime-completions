@@ -1,0 +1,317 @@
+{
+	"scope": "source.cottle - comment - string",
+	"completions": [
+		{
+			"trigger": "abs",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "add",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "call",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "cast",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "cat",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "ceil",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "char",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "cmp",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "cos",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "cross",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "default",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "defined",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "div",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "eq",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "except",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "filter",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "find",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "flip",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "floor",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "format",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "ge",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "gt",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "has",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "join",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "lcase",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "le",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "len",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "lt",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "map",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "match",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "max",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "min",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "mod",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "mul",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "ne",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "ord",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "pow",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "rand",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "range",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "round",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "sin",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "slice",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "sort",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "split",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "sub",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "token",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "type",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "ucase",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "union",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "when",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "xor",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		},
+		{
+			"trigger": "zip",
+			"annotation": "builtin",
+			"kind": "function",
+			"details": "Built-in function"
+		}
+	]
+}
